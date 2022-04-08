@@ -1,10 +1,11 @@
 extends layout
 
 block content
+  
   .container 
     .row 
       .col-lg-5.mx-auto 
-        .card.shadow-sm(style="border-radius:20px")
+        .card.shadow-sm(style="border-radius:20px; height:85vh")
           .card-body 
             .card-header.bg-white.border-0 
               .d-flex 
@@ -14,8 +15,26 @@ block content
                 .div.ms-auto
                   i(class='bx bxs-plus-circle display-4 text-primary')
             ul.list-group.list-group-flush.border-0
-              li.list-group-item.list-group-item-action.border-0 
-                .d-flex.align-items-center 
+              li.list-group-item.list-group-item-action.border-0.d-flex.py-0.task-list
+                .align-items-center 
                   p.h6 Morning walk
-                  p.small.text-muted.ms-auto 7:00 am
-              li.list-group-item.list-group-item-action.border-0 Piasa kaha h
+                  p(style="font-size:12px").text-muted.ms-auto 7:00 am
+                .bg-white.shadow-sm.position-absolute.p-1.px-3.hover-menu(style="right:15px;border-radius:0px 0px 10px 10px")
+                  a(href="").float-end
+                    i(class='bx bxs-trash-alt')
+                  a(href="").ms-3 
+                    i(class='bx bxs-edit')
+                  a(href="").ms-3 
+                    i(class='bx bx-check')
+              li.list-group-item.list-group-item-action.border-0.d-flex.py-0.task-list
+                .align-items-center 
+                  p.h6 Morning walk
+                  p(style="font-size:12px").text-muted.ms-auto 7:00 am
+                .bg-white.shadow-sm.position-absolute.p-1.px-3.hover-menu(style="right:15px;border-radius:0px 0px 10px 10px")
+                  a(href="").float-end
+                    i(class='bx bxs-trash-alt')
+                  a(href="").ms-3 
+                    i(class='bx bxs-edit')
+                  a(href="").ms-3 
+                    i(class='bx bx-check')
+
