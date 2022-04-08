@@ -10,31 +10,37 @@ block content
             .card-header.bg-white.border-0 
               .d-flex 
                 .div
-                  h5 friday, 8 April 
+                  //- script.
+                    const monthNames = ["January", "February", "March", "April", "May", "June",
+                      "July", "August", "September", "October", "November", "December"
+                    ];
+
+                    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+                    let ts = Date.now();
+                    let date_ob = new Date(ts);
+                    let date = date_ob.getDate();
+                    let month = (monthNames[date_ob.getMonth()])
+                    var dayName = days[date_ob.getDay()];
+
+                    var sss = (dayName + "," + date + " " + month);
+                    document.getElementsByClassName('date').innerHTML = "sss"
+                  h5.date 
                   p.small.text-primary 3 tasks
                 .div.ms-auto
-                  i(class='bx bxs-plus-circle display-4 text-primary')
+                  a(href="#exampleModal",data-bs-toggle="modal" data-bs-target="#exampleModal") 
+                    i(class='bx bxs-plus-circle display-4 text-primary')
             ul.list-group.list-group-flush.border-0
-              li.list-group-item.list-group-item-action.border-0.d-flex.py-0.task-list
-                .align-items-center 
-                  p.h6 Morning walk
-                  p(style="font-size:12px").text-muted.ms-auto 7:00 am
-                .bg-white.shadow-sm.position-absolute.p-1.px-3.hover-menu(style="right:15px;border-radius:0px 0px 10px 10px")
-                  a(href="").float-end
-                    i(class='bx bxs-trash-alt')
-                  a(href="").ms-3 
-                    i(class='bx bxs-edit')
-                  a(href="").ms-3 
-                    i(class='bx bx-check')
-              li.list-group-item.list-group-item-action.border-0.d-flex.py-0.task-list
-                .align-items-center 
-                  p.h6 Morning walk
-                  p(style="font-size:12px").text-muted.ms-auto 7:00 am
-                .bg-white.shadow-sm.position-absolute.p-1.px-3.hover-menu(style="right:15px;border-radius:0px 0px 10px 10px")
-                  a(href="").float-end
-                    i(class='bx bxs-trash-alt')
-                  a(href="").ms-3 
-                    i(class='bx bxs-edit')
-                  a(href="").ms-3 
-                    i(class='bx bx-check')
-
+              each t in x
+                li.list-group-item.list-group-item-action.border-0.d-flex.py-0.task-list
+                  .align-items-center 
+                    p.h6= name 
+                    p(style="font-size:12px").text-muted.ms-auto 7:00 am
+                  .bg-white.shadow-sm.position-absolute.p-1.px-3.hover-menu(style="right:15px;border-radius:0px 0px 10px 10px")
+                    a(href="").float-end
+                      i(class='bx bxs-trash-alt')
+                    a(href="").ms-3 
+                      i(class='bx bxs-edit')
+                    a(href="").ms-3 
+                      i(class='bx bx-check')
+              
