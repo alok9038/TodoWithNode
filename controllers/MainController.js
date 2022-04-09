@@ -1,22 +1,18 @@
 const todoModel = require("../models/todoModel");
+// var dateTime = require('node-datetime');
+const dateTime = require('date-and-time');
+const now = new Date();
+var time = dateTime.format(now, 'hh:mm A');   // => '07:14 AM GMT+0000'
 
 
 async function HomePage(req, res){
     let todo = await todoModel.find({}).sort({'status':1})
     let taskCount = await todoModel.countDocuments()
 
-    const monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var newDate = dateTime.format(now, 'ddd, DD MMM YYYY');       // => 'Fri, Jan 02 2015'
 
-    let ts = Date.now();
-    let date_ob = new Date(ts);
-    let date = date_ob.getDate();
-    let month = (monthNames[date_ob.getMonth()])
-    var dayName = days[date_ob.getDay()];
+    console.log(time)
 
-    var newDate = (dayName + "," + date + " " + month);
-
-    console.log(taskCount)
     return res.render('index', {"todo":todo, "date":newDate, "taskCount":taskCount});
 }
 
@@ -29,6 +25,7 @@ async function insert(req, res){
     else{
         var todo = new todoModel()
         todo.task = req.body.task
+        todo.date = time
         todo.save()
 
     }
