@@ -20,7 +20,7 @@ async function insert(req, res){
     let check = await todoModel.findOne({'task':req.body.task})
 
     if(check != null){
-        await todoModel.findByIdAndUpdate(check._id,{'status':0})
+        await todoModel.findByIdAndUpdate(check._id,{'status':0, 'date':time})
     }
     else{
         var todo = new todoModel()

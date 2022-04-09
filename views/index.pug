@@ -1,7 +1,6 @@
 extends layout
 
 block content
-  
   .container 
     .row 
       .col-lg-5.mx-auto 
@@ -9,9 +8,7 @@ block content
           .card-body.h-75
             .card-header.bg-white.border-0
               .d-flex 
-                .div
-                  //- script.
-                    
+                .div                    
                   h5.date= date
                   p.small.text-theme.h6= taskCount + ' tasks'
                 .div.ms-auto
@@ -43,10 +40,11 @@ block content
                           i(class='bx bxs-edit')
                         a(href=`/close/${x._id}`).ms-3 
                           i(class='bx bx-check')
+                        //- button(onClick=`func()`) alert
                   div(class="modal fade" id=`edit_${x._id}` tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true")
                     div(class="modal-dialog" )
                       div(class="modal-content bg-light" style="border-radius:25px")
                         div(class="modal-body")
                           form(action=`update/${x._id}`, method="post") 
                               input.form-control.shadow-none.fs-6.border-0(type="text" value=`${x.task}` style="border-radius:10px" placeholder="   enter your task ... " name="task")
-                        
+
