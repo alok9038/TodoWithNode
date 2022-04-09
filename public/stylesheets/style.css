@@ -46,16 +46,7 @@ a {
   background: #555; 
 }
 
-#sortable-row {
-  list-style: none;
-}
-#sortable-row li {
-  margin-bottom: 4px;
-  padding: 10px;
-  background-color: #BBF4A8;
-  /* background-color: #43474dcb; */
-  border-radius: 5px;
-  /* color: white; */
+#sortable-row li p{
   cursor: move;
 }
 .btnSave {
@@ -67,7 +58,7 @@ a {
   margin-left: 40px;
 }
 #sortable-row li.ui-state-highlight {
-  height: 1.0em;
+  height: 4.0em;
   background-color: #F0F0F0;
   border: #ccc 2px dotted;
 }
