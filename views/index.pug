@@ -18,7 +18,7 @@ block content
                   a(href="#exampleModal",data-bs-toggle="modal" data-bs-target="#exampleModal") 
                     i(class='bx bxs-plus-circle display-4 text-theme')
             .p-0.overflow-auto(style="height:420px")
-              ul.list-group.list-group-flush.border-0
+              ul.list-group.list-group-flush.border-0(id="sortable-row")
                 each x in todo
                   li.list-group-item.list-group-item-action.border-0.d-flex.py-0.task-list
                     if x.status == 1
@@ -50,4 +50,3 @@ block content
                           form(action=`update/${x._id}`, method="post") 
                               input.form-control.shadow-none.fs-6.border-0(type="text" value=`${x.task}` style="border-radius:10px" placeholder="   enter your task ... " name="task")
                         
-                
