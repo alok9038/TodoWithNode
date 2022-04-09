@@ -1,5 +1,17 @@
 body {
   padding: 50px;
+  background-color: #005b9f;
+}
+
+.bg-theme{
+  background-color: #00838f;
+}
+
+.text-theme{
+  color: #0288d1;
+}
+.text-green{
+  color: #2bbd7e;
 }
 
 a {
@@ -26,7 +38,7 @@ a {
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: rgb(167, 166, 166); 
 }
 
 /* Handle on hover */

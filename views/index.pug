@@ -13,10 +13,10 @@ block content
                   //- script.
                     
                   h5.date= date
-                  p.small.text-primary= taskCount + ' tasks'
+                  p.small.text-theme.h6= taskCount + ' tasks'
                 .div.ms-auto
                   a(href="#exampleModal",data-bs-toggle="modal" data-bs-target="#exampleModal") 
-                    i(class='bx bxs-plus-circle display-4 text-primary')
+                    i(class='bx bxs-plus-circle display-4 text-theme')
             .p-0.overflow-auto(style="height:420px")
               ul.list-group.list-group-flush.border-0
                 each x in todo
@@ -24,12 +24,14 @@ block content
                     if x.status == 1
                       .align-items-center 
                         del 
-                          p.h6.text-success= x.task
+                          p.h6.text-muted= x.task
                             //- i(class='bx bx-check-circle')
                           p(style="font-size:12px").text-muted.ms-auto= x.date
-                      .bg-white.shadow-sm.position-absolute.p-1.px-3.hover-menu(style="right:15px;border-radius:0px 0px 10px 10px")
+                      .bg-white.shadow-sm.position-absolute.p-1.px-3.hover-menu(style="right:85px;border-radius:0px 0px 10px 10px")
                         a(href=`remove/${x._id}`).float-end
                           i(class='bx bxs-trash-alt')
+                      .done.ms-auto.left-0.d-flex.justify-content-center.align-items-center(style=" width:50px")
+                        i(class='bx bxs-check-circle').rounded-circle.shadow-sm.p-1.fs-3.text-green
                     else
                       .align-items-center 
                         p.h6.text-danger= x.task
